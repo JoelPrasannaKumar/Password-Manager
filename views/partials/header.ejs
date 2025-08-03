@@ -1,0 +1,29 @@
+<!-- views/partials/header.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+    <script src="/js/encrypt.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/"><h1>SecureVault</h1></a>
+            <nav>
+                <% if (typeof user !== 'undefined') { %>
+                    <form action="/auth/logout" method="POST">
+                        <button type="submit">Logout</button>
+                    </form>
+                <% } else { %>
+                    <a href="/auth/login">Login</a>
+                    <a href="/auth/signup">Sign Up</a>
+                <% } %>
+            </nav>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="container">
