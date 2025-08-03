@@ -1,0 +1,19 @@
+{
+  "name": "password-manager",
+  "version": "1.0.0",
+  "description": "A simple password manager with Node.js, Express, EJS, and Firestore.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.2.0",
+    "nodemon": "^3.1.10"
+  }
+}
