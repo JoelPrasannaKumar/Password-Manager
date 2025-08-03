@@ -1,0 +1,35 @@
+<!-- views/dashboard.ejs -->
+<%- include('partials/header') %>
+
+<div class="dashboard">
+    <h2 style="margin-bottom: 2rem;">My Saved Credentials</h2>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search by website or username...">
+        <a href="/dashboard/add" class="btn btn-primary" style="width: auto;">Add New</a>
+    </div>
+    
+    <% if (passwords.length === 0) { %>
+        <p>You don't have any saved passwords yet. Click "Add New" to get started.</p>
+    <% } else { %>
+        <div class="password-list">
+            <% passwords.forEach(password => { %>
+                <div class="password-card" data-encrypted-password="<%= password.encryptedPassword %>">
+                    <div>
+                        <h3><%= password.website %></h3>
+                        <p><strong>Username:</strong> <%= password.username %></p>
+                        <p class="password-display"><strong>Password:</strong> <span class="password-hidden" style="font-style: italic;">********</span></p>
+                    </div>
+                    <div class="password-actions">
+                        <button class="btn btn-secondary toggle-password-btn">Show Password</button>
+                        <a href="/dashboard/edit/<%= password.id %>" class="btn btn-primary">Edit</a>
+                        <form action="/dashboard/delete/<%= password.id %>" method="POST" style="display: inline;">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,13 @@
+<!-- views/home.ejs -->
+<%- include('partials/header') %>
+
+<div class="form-card" style="max-width: 700px; text-align: center;">
+    <h2>Welcome to SecureVault</h2>
+    <p style="margin-bottom: 2rem;">
+        Your personal and secure password manager. Store all your credentials in one place, protected by client-side encryption.
+    </p>
+    <a href="/auth/signup" class="btn btn-primary" style="margin-right: 10px; width: auto;">Get Started</a>
+    <a href="/auth/login" class="btn btn-secondary" style="width: auto;">Log In</a>
+</div>
+
+<%- include('partials/footer') %>

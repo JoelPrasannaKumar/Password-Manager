@@ -1,0 +1,23 @@
+<!-- views/edit.ejs -->
+<%- include('partials/header') %>
+
+<div class="form-card">
+    <h2>Edit Password</h2>
+    <form class="add-edit-form" action="/dashboard/edit/<%= password.id %>" method="POST">
+        <div class="form-group">
+            <label for="website">Website:</label>
+            <input type="text" id="website" name="website" value="<%= password.website %>" required>
+        </div>
+        <div class="form-group">
+            <label for="username">Username/Email:</label>
+            <input type="text" id="username" name="username" value="<%= password.username %>" required>
+        </div>
+        <div class="form-group">
+            <label for="password">New Password (leave blank to keep current):</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Update Password</button>
+    </form>
+</div>
+
+<%- include('partials/footer') %>
